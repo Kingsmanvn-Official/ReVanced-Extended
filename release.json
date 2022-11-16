@@ -1,9 +1,9 @@
 {
-  "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/83188841",
-  "assets_url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/83188841/assets",
-  "upload_url": "https://uploads.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/83188841/assets{?name,label}",
-  "html_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/tag/Build-2022.11.16-07.08.38",
-  "id": 83188841,
+  "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/83225144",
+  "assets_url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/83225144/assets",
+  "upload_url": "https://uploads.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/83225144/assets{?name,label}",
+  "html_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/tag/5",
+  "id": 83225144,
   "author": {
     "login": "github-actions[bot]",
     "id": 41898282,
@@ -24,20 +24,20 @@
     "type": "Bot",
     "site_admin": false
   },
-  "node_id": "RE_kwDOIcN1Hc4E9Vxp",
-  "tag_name": "Build-2022.11.16-07.08.38",
+  "node_id": "RE_kwDOIcN1Hc4E9eo4",
+  "tag_name": "5",
   "target_commitish": "main",
-  "name": "Build-2022.11.16-07.08.38",
+  "name": "ReVanced-Extended-5",
   "draft": false,
   "prerelease": false,
-  "created_at": "2022-11-16T01:28:57Z",
-  "published_at": "2022-11-16T01:38:42Z",
+  "created_at": "2022-11-16T09:40:17Z",
+  "published_at": "2022-11-16T09:49:53Z",
   "assets": [
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84769764",
-      "id": 84769764,
-      "node_id": "RA_kwDOIcN1Hc4FDXvk",
-      "name": "Re-reddit-2022.42.0-output.apk",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84810139",
+      "id": 84810139,
+      "node_id": "RA_kwDOIcN1Hc4FDhmb",
+      "name": "Re-reddit-2022.43.0-output.apk",
       "label": "",
       "uploader": {
         "login": "github-actions[bot]",
@@ -61,16 +61,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 306654802,
+      "size": 308639440,
       "download_count": 1,
-      "created_at": "2022-11-16T01:38:43Z",
-      "updated_at": "2022-11-16T01:38:50Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/Build-2022.11.16-07.08.38/Re-reddit-2022.42.0-output.apk"
+      "created_at": "2022-11-16T09:49:55Z",
+      "updated_at": "2022-11-16T09:50:04Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/5/Re-reddit-2022.43.0-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84769769",
-      "id": 84769769,
-      "node_id": "RA_kwDOIcN1Hc4FDXvp",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84810159",
+      "id": 84810159,
+      "node_id": "RA_kwDOIcN1Hc4FDhmv",
       "name": "Re-tiktok-26.9.4-output.apk",
       "label": "",
       "uploader": {
@@ -95,16 +95,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 301660129,
+      "size": 301426657,
       "download_count": 1,
-      "created_at": "2022-11-16T01:38:51Z",
-      "updated_at": "2022-11-16T01:39:00Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/Build-2022.11.16-07.08.38/Re-tiktok-26.9.4-output.apk"
+      "created_at": "2022-11-16T09:50:05Z",
+      "updated_at": "2022-11-16T09:50:14Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/5/Re-tiktok-26.9.4-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84769774",
-      "id": 84769774,
-      "node_id": "RA_kwDOIcN1Hc4FDXvu",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84810175",
+      "id": 84810175,
+      "node_id": "RA_kwDOIcN1Hc4FDhm_",
       "name": "Re-twitter-9.65.3.release.0-output.apk",
       "label": "",
       "uploader": {
@@ -129,16 +129,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 167454000,
+      "size": 167871792,
       "download_count": 1,
-      "created_at": "2022-11-16T01:39:00Z",
-      "updated_at": "2022-11-16T01:39:05Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/Build-2022.11.16-07.08.38/Re-twitter-9.65.3.release.0-output.apk"
+      "created_at": "2022-11-16T09:50:15Z",
+      "updated_at": "2022-11-16T09:50:21Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/5/Re-twitter-9.65.3.release.0-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84769780",
-      "id": 84769780,
-      "node_id": "RA_kwDOIcN1Hc4FDXv0",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84810190",
+      "id": 84810190,
+      "node_id": "RA_kwDOIcN1Hc4FDhnO",
       "name": "Re-youtube-17-44-34-output.apk",
       "label": "",
       "uploader": {
@@ -163,16 +163,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 88821034,
-      "download_count": 2,
-      "created_at": "2022-11-16T01:39:07Z",
-      "updated_at": "2022-11-16T01:39:11Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/Build-2022.11.16-07.08.38/Re-youtube-17-44-34-output.apk"
+      "size": 88837418,
+      "download_count": 1,
+      "created_at": "2022-11-16T09:50:25Z",
+      "updated_at": "2022-11-16T09:50:29Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/5/Re-youtube-17-44-34-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84769777",
-      "id": 84769777,
-      "node_id": "RA_kwDOIcN1Hc4FDXvx",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84810185",
+      "id": 84810185,
+      "node_id": "RA_kwDOIcN1Hc4FDhnJ",
       "name": "Re-youtube_music-5.32.51-output.apk",
       "label": "",
       "uploader": {
@@ -197,16 +197,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 57899069,
+      "size": 57956413,
       "download_count": 1,
-      "created_at": "2022-11-16T01:39:05Z",
-      "updated_at": "2022-11-16T01:39:07Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/Build-2022.11.16-07.08.38/Re-youtube_music-5.32.51-output.apk"
+      "created_at": "2022-11-16T09:50:21Z",
+      "updated_at": "2022-11-16T09:50:24Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/5/Re-youtube_music-5.32.51-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84769783",
-      "id": 84769783,
-      "node_id": "RA_kwDOIcN1Hc4FDXv3",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/releases/assets/84810193",
+      "id": 84810193,
+      "node_id": "RA_kwDOIcN1Hc4FDhnR",
       "name": "VancedMicroG-output.apk",
       "label": "",
       "uploader": {
@@ -233,12 +233,12 @@
       "state": "uploaded",
       "size": 10993250,
       "download_count": 1,
-      "created_at": "2022-11-16T01:39:12Z",
-      "updated_at": "2022-11-16T01:39:13Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/Build-2022.11.16-07.08.38/VancedMicroG-output.apk"
+      "created_at": "2022-11-16T09:50:29Z",
+      "updated_at": "2022-11-16T09:50:30Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/docker-py-revanced/releases/download/5/VancedMicroG-output.apk"
     }
   ],
-  "tarball_url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/tarball/Build-2022.11.16-07.08.38",
-  "zipball_url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/zipball/Build-2022.11.16-07.08.38",
-  "body": "\n\n<details>\n  <summary>🛡 VirusTotal analysis</summary>\n\n  * [`Re-reddit-2022.42.0-output.apk`](https://www.virustotal.com/gui/file-analysis/NDVlNTVkZmUyYzIzZjBjOWFjNDllNGNhNGQ0OWIyNjA6MTY2ODU2MjgwMQ==/detection)\n  * [`Re-tiktok-26.9.4-output.apk`](https://www.virustotal.com/gui/file-analysis/MzViNTczNTJhNTA0ZGQxZGE0YzY3NmI5ZDFlZjI3ZDI6MTY2ODU2MjgzNQ==/detection)\n  * [`Re-twitter-9.65.3.release.0-output.apk`](https://www.virustotal.com/gui/file-analysis/ZjlmMWRlNjA0MWYxZTg5MzMxZjIwMDdlYjUwNzZhYWI6MTY2ODU2Mjg3Mw==/detection)\n  * [`Re-youtube-17-44-34-output.apk`](https://www.virustotal.com/gui/file-analysis/YzI5MGQ3MTNmZTEzZGE0NGVjZTJiNWIwNGU5NzNiZWE6MTY2ODU2Mjg4MQ==/detection)\n  * [`Re-youtube_music-5.32.51-output.apk`](https://www.virustotal.com/gui/file-analysis/M2Y0MmFhODRhNTFiNjhmOTMwODFhY2EyNTA0ZTEwMjk6MTY2ODU2Mjg4OQ==/detection)\n  * [`VancedMicroG-output.apk`](https://www.virustotal.com/gui/file-analysis/MThiZDNlZWU4ZWQyMWE4ODdhOWIzNjU3ZGNmOGI1Zjc6MTY2ODU2Mjg5Ng==/detection)\n<sub>These scans were produced by the [VirusTotal GitHub Action](https://github.com/nikhilbadyal/ghaction-virustotal)</sub></details>\n"
+  "tarball_url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/tarball/5",
+  "zipball_url": "https://api.github.com/repos/Kingsmanvn-Official/docker-py-revanced/zipball/5",
+  "body": "2022-11-16\n  \nCLI: revanced-cli-2.15.1-all.jar  \n\nIntegrations: app-release-unsigned-v0.68.6.apk  \n\nPatches: revanced-patches-2.108.0.jar  \n[Patches Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.108.0)  \n\nUse [MicroG APK](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) for YouTube and Music\n\n[ReVanced-Extended repo](https://github.com/Kingsmanvn-Official/docker-py-revanced)\n\n\n<details>\n  <summary>🛡 VirusTotal analysis</summary>\n\n  * [`Re-reddit-2022.43.0-output.apk`](https://www.virustotal.com/gui/file-analysis/MmUwZmRiMGRkMjEwOTNmOTc5ODJhNzk3MjI2YTA3Yjc6MTY2ODU5MjI5Nw==/detection)\n  * [`Re-tiktok-26.9.4-output.apk`](https://www.virustotal.com/gui/file-analysis/MDE2NDg4MjAxYzFmYmI1YmRmM2I5ZmM3NWU0YzcxNzg6MTY2ODU5MjMzOQ==/detection)\n  * [`Re-twitter-9.65.3.release.0-output.apk`](https://www.virustotal.com/gui/file-analysis/MjU1OTBkZDZlNTNlZmRiNTY5MjMwNjM0ODdhMGFmMjc6MTY2ODU5MjM2Nw==/detection)\n  * [`Re-youtube-17-44-34-output.apk`](https://www.virustotal.com/gui/file-analysis/ODlkM2ExMjU1OGFhYjc0ZjFjODU2MzQ2OGU2YWE0MTY6MTY2ODU5MjM5Mg==/detection)\n  * [`Re-youtube_music-5.32.51-output.apk`](https://www.virustotal.com/gui/file-analysis/YjczODlhZTFlYmNmYTRlZjZlYTFjMzkwZDAzMTcyMTA6MTY2ODU5MjQwMA==/detection)\n  * [`VancedMicroG-output.apk`](https://www.virustotal.com/gui/file-analysis/MThiZDNlZWU4ZWQyMWE4ODdhOWIzNjU3ZGNmOGI1Zjc6MTY2ODU5MjQxMw==/detection)\n<sub>These scans were produced by the [VirusTotal GitHub Action](https://github.com/nikhilbadyal/ghaction-virustotal)</sub></details>\n"
 }

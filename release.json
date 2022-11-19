@@ -1,9 +1,9 @@
 {
-  "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/83632373",
-  "assets_url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/83632373/assets",
-  "upload_url": "https://uploads.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/83632373/assets{?name,label}",
-  "html_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/tag/4",
-  "id": 83632373,
+  "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/83650355",
+  "assets_url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/83650355/assets",
+  "upload_url": "https://uploads.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/83650355/assets{?name,label}",
+  "html_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/tag/5",
+  "id": 83650355,
   "author": {
     "login": "github-actions[bot]",
     "id": 41898282,
@@ -24,19 +24,19 @@
     "type": "Bot",
     "site_admin": false
   },
-  "node_id": "RE_kwDOIcN1Hc4E_CD1",
-  "tag_name": "4",
+  "node_id": "RE_kwDOIcN1Hc4E_Gcz",
+  "tag_name": "5",
   "target_commitish": "main",
-  "name": "ReVanced-Extended-4",
+  "name": "ReVanced-Extended-5",
   "draft": false,
   "prerelease": false,
-  "created_at": "2022-11-19T04:11:35Z",
-  "published_at": "2022-11-19T04:19:08Z",
+  "created_at": "2022-11-19T08:09:30Z",
+  "published_at": "2022-11-19T18:36:43Z",
   "assets": [
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179403",
-      "id": 85179403,
-      "node_id": "RA_kwDOIcN1Hc4FE7wL",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234066",
+      "id": 85234066,
+      "node_id": "RA_kwDOIcN1Hc4FFJGS",
       "name": "Re-reddit-2022.43.0-output.apk",
       "label": "",
       "uploader": {
@@ -61,16 +61,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 307472080,
+      "size": 307144400,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:09Z",
-      "updated_at": "2022-11-19T04:19:16Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/Re-reddit-2022.43.0-output.apk"
+      "created_at": "2022-11-19T18:36:44Z",
+      "updated_at": "2022-11-19T18:36:50Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/Re-reddit-2022.43.0-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179406",
-      "id": 85179406,
-      "node_id": "RA_kwDOIcN1Hc4FE7wO",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234074",
+      "id": 85234074,
+      "node_id": "RA_kwDOIcN1Hc4FFJGa",
       "name": "Re-tiktok-27.0.3-output.apk",
       "label": "",
       "uploader": {
@@ -95,16 +95,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 302979914,
+      "size": 303213386,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:17Z",
-      "updated_at": "2022-11-19T04:19:22Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/Re-tiktok-27.0.3-output.apk"
+      "created_at": "2022-11-19T18:36:51Z",
+      "updated_at": "2022-11-19T18:36:57Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/Re-tiktok-27.0.3-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179414",
-      "id": 85179414,
-      "node_id": "RA_kwDOIcN1Hc4FE7wW",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234075",
+      "id": 85234075,
+      "node_id": "RA_kwDOIcN1Hc4FFJGb",
       "name": "Re-twitch-14.2.0-output.apk",
       "label": "",
       "uploader": {
@@ -129,16 +129,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 179880512,
+      "size": 179733056,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:23Z",
-      "updated_at": "2022-11-19T04:19:27Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/Re-twitch-14.2.0-output.apk"
+      "created_at": "2022-11-19T18:36:58Z",
+      "updated_at": "2022-11-19T18:37:01Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/Re-twitch-14.2.0-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179416",
-      "id": 85179416,
-      "node_id": "RA_kwDOIcN1Hc4FE7wY",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234078",
+      "id": 85234078,
+      "node_id": "RA_kwDOIcN1Hc4FFJGe",
       "name": "Re-twitter-9.65.5.release.0-output.apk",
       "label": "",
       "uploader": {
@@ -163,17 +163,17 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 167757500,
+      "size": 168023740,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:27Z",
-      "updated_at": "2022-11-19T04:19:30Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/Re-twitter-9.65.5.release.0-output.apk"
+      "created_at": "2022-11-19T18:37:02Z",
+      "updated_at": "2022-11-19T18:37:06Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/Re-twitter-9.65.5.release.0-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179421",
-      "id": 85179421,
-      "node_id": "RA_kwDOIcN1Hc4FE7wd",
-      "name": "Re-youtube-17-45-34-output.apk",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234086",
+      "id": 85234086,
+      "node_id": "RA_kwDOIcN1Hc4FFJGm",
+      "name": "Re-youtube-17-45-36-output.apk",
       "label": "",
       "uploader": {
         "login": "github-actions[bot]",
@@ -197,16 +197,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 152457589,
+      "size": 152678773,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:33Z",
-      "updated_at": "2022-11-19T04:19:36Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/Re-youtube-17-45-34-output.apk"
+      "created_at": "2022-11-19T18:37:08Z",
+      "updated_at": "2022-11-19T18:37:11Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/Re-youtube-17-45-36-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179420",
-      "id": 85179420,
-      "node_id": "RA_kwDOIcN1Hc4FE7wc",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234082",
+      "id": 85234082,
+      "node_id": "RA_kwDOIcN1Hc4FFJGi",
       "name": "Re-youtube_music-5.32.51-output.apk",
       "label": "",
       "uploader": {
@@ -231,16 +231,16 @@
       },
       "content_type": "application/vnd.android.package-archive",
       "state": "uploaded",
-      "size": 54646845,
+      "size": 54540349,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:31Z",
-      "updated_at": "2022-11-19T04:19:32Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/Re-youtube_music-5.32.51-output.apk"
+      "created_at": "2022-11-19T18:37:06Z",
+      "updated_at": "2022-11-19T18:37:07Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/Re-youtube_music-5.32.51-output.apk"
     },
     {
-      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85179423",
-      "id": 85179423,
-      "node_id": "RA_kwDOIcN1Hc4FE7wf",
+      "url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/releases/assets/85234089",
+      "id": 85234089,
+      "node_id": "RA_kwDOIcN1Hc4FFJGp",
       "name": "VancedMicroG-output.apk",
       "label": "",
       "uploader": {
@@ -267,12 +267,12 @@
       "state": "uploaded",
       "size": 10993250,
       "download_count": 1,
-      "created_at": "2022-11-19T04:19:36Z",
-      "updated_at": "2022-11-19T04:19:37Z",
-      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/4/VancedMicroG-output.apk"
+      "created_at": "2022-11-19T18:37:11Z",
+      "updated_at": "2022-11-19T18:37:12Z",
+      "browser_download_url": "https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases/download/5/VancedMicroG-output.apk"
     }
   ],
-  "tarball_url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/tarball/4",
-  "zipball_url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/zipball/4",
-  "body": "2022-11-19\n  \nCLI: revanced-cli-2.15.2-all.jar  \n\nIntegrations: app-release-unsigned-v0.71.1.apk  \n\nPatches: revanced-patches-2.111.3.jar  \n[Patches Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.111.3)  \n\nUse [MicroG APK](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) for YouTube and Music\n\n[ReVanced-Extended repo](https://github.com/Kingsmanvn-Official/ReVanced-Extended)\n\n\n<details>\n  <summary>🛡 VirusTotal analysis</summary>\n\n  * [`Re-reddit-2022.43.0-output.apk`](https://www.virustotal.com/gui/file-analysis/ZjE2MTY5YmI5ZDY5YzAxNDhlOTRkNTIxODM0YjJlNWQ6MTY2ODgzMTYzOA==/detection)\n  * [`Re-tiktok-27.0.3-output.apk`](https://www.virustotal.com/gui/file-analysis/OTM2NTJiNjI4NDg1YTM3ZmQ0ZTE2YWUxNzZjZDE0YWE6MTY2ODgzMTY4NQ==/detection)\n  * [`Re-twitch-14.2.0-output.apk`](https://www.virustotal.com/gui/file-analysis/NmNlNWU5NTY2ZTZmN2Y4Zjc1OGFmYjU2YjQxYmE1NTc6MTY2ODgzMTcxMA==/detection)\n  * [`Re-twitter-9.65.5.release.0-output.apk`](https://www.virustotal.com/gui/file-analysis/NTUxMmNhYTM1NmFkMjQ4MTA5MmE5MTEzYjQ0ZjE0ZTI6MTY2ODgzMTczNw==/detection)\n  * [`Re-youtube-17-45-34-output.apk`](https://www.virustotal.com/gui/file-analysis/YTA1YjY5MWU0YWZiODllNjEwY2NjNGNmZDFkMGMxMWE6MTY2ODgzMTc1OA==/detection)\n  * [`Re-youtube_music-5.32.51-output.apk`](https://www.virustotal.com/gui/file-analysis/YjIzMTEyODZiZGNkNmIzYzFmZmEzY2E1NjQ0NjhiNjI6MTY2ODgzMTc2Ng==/detection)\n  * [`VancedMicroG-output.apk`](https://www.virustotal.com/gui/file-analysis/MThiZDNlZWU4ZWQyMWE4ODdhOWIzNjU3ZGNmOGI1Zjc6MTY2ODgzMTc4Mg==/detection)\n<sub>These scans were produced by the [VirusTotal GitHub Action](https://github.com/nikhilbadyal/ghaction-virustotal)</sub></details>\n"
+  "tarball_url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/tarball/5",
+  "zipball_url": "https://api.github.com/repos/Kingsmanvn-Official/ReVanced-Extended/zipball/5",
+  "body": "2022-11-19\n  \nCLI: revanced-cli-2.15.2-all.jar  \n\nIntegrations: app-release-unsigned-v0.71.1.apk  \n\nPatches: revanced-patches-2.111.4.jar  \n[Patches Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.111.4)  \n\nUse [MicroG APK](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) for YouTube and Music\n\n[ReVanced-Extended repo](https://github.com/Kingsmanvn-Official/ReVanced-Extended)\n\n\n<details>\n  <summary>🛡 VirusTotal analysis</summary>\n\n  * [`Re-reddit-2022.43.0-output.apk`](https://www.virustotal.com/gui/file-analysis/ODBlYWU2NmUxNDkzOWU4NzY0ZWJkOWUwODcxMjhmNTc6MTY2ODg4MzA2NA==/detection)\n  * [`Re-tiktok-27.0.3-output.apk`](https://www.virustotal.com/gui/file-analysis/MjA1OTMzODQ5ZDJlNjFjNDYyYWM5YTIwNWYxOGI0ZWU6MTY2ODg4MzA4Nw==/detection)\n  * [`Re-twitch-14.2.0-output.apk`](https://www.virustotal.com/gui/file-analysis/OTI5MmMwYTI2ZDRiOGEzZGE2MTYzNzFjZDI3MmM3MmM6MTY2ODg4MzA5OQ==/detection)\n  * [`Re-twitter-9.65.5.release.0-output.apk`](https://www.virustotal.com/gui/file-analysis/ZTc2YzIxODFhM2NmODU2ODdmYzkxMDk3MDZkOWI4MjY6MTY2ODg4MzEyMQ==/detection)\n  * [`Re-youtube-17-45-36-output.apk`](https://www.virustotal.com/gui/file-analysis/ZTMwZjQ2MjhmOTliNzVlNjk4NDc5MmVkNTcyNjI2NWM6MTY2ODg4MzE0NA==/detection)\n  * [`Re-youtube_music-5.32.51-output.apk`](https://www.virustotal.com/gui/file-analysis/YjJlNDg0MzJlNDYzNzZjNmY0ZTk1YWZhOTQ1MjI2MDc6MTY2ODg4MzE0OQ==/detection)\n  * [`VancedMicroG-output.apk`](https://www.virustotal.com/gui/file-analysis/MThiZDNlZWU4ZWQyMWE4ODdhOWIzNjU3ZGNmOGI1Zjc6MTY2ODg4MzE1NQ==/detection)\n<sub>These scans were produced by the [VirusTotal GitHub Action](https://github.com/nikhilbadyal/ghaction-virustotal)</sub></details>\n"
 }

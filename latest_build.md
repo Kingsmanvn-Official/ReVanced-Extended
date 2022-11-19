@@ -4,8 +4,8 @@ CLI: revanced-cli-2.15.2-all.jar
 
 Integrations: app-release-unsigned-v0.71.1.apk  
 
-Patches: revanced-patches-2.111.3.jar  
-[Patches Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.111.3)  
+Patches: revanced-patches-2.111.4.jar  
+[Patches Changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.111.4)  
 
 Use [MicroG APK](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) for YouTube and Music
 

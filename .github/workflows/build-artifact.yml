@@ -21,7 +21,7 @@ on:
       COMMIT_CHANGELOG:
         type: boolean
         required: false
-        default: false
+        default: true
 
 jobs:
   build-apk:

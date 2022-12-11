@@ -4,10 +4,42 @@ env:
   COMPOSE_DOCKER_CLI_BUILD: 1
   HAVE_TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID != '' }}
 on:
-  workflow_dispatch:
+  workflow_call:
+    secrets:
+      ENVS:
+        required: false
+      GH_TOKEN:
+        required: false
+      VT_API_KEY:
+        required: false
+      TELEGRAM_CHAT_ID:
+        required: false
+      TELEGRAM_BOT_TOKEN:
+        required: false
+      STICKER_ID:
+        required: false
+      CHANGELOG_GITHUB_REPOSITORY:
+        required: false
+      MESSAGE_NON_ROOT:
+        required: false
+      SEND_STICKER:
+        required: false
+      DOWNLOAD_GITHUB_REPOSITORY:
+        required: false
+      ASSETS_PATTERN:
+        required: false
+      SEND_MESSAGE:
+        required: false
+      MESSAGE_ROOT:
+        required: false
     inputs:
       GITHUB_UPLOAD:
         description: "Upload to GitHub"
+        required: false
+        type: boolean
+        default: true
+      TELEGRAM_NOTIFY:
+        description: "Upload to Telegram"
         required: false
         type: boolean
         default: true
@@ -15,22 +47,54 @@ on:
         description: "Upload Non Rooted APKs to Telegram"
         required: false
         type: boolean
-        default: false
+        default: true
       TELEGRAM_ROOT_UPLOAD:
         description: "Upload Mgaisk Module from nikhilbadyal/revanced-magisk-module to Telegram"
         required: false
         type: boolean
-        default: false
+        default: true
       VIRUSTOTAL_SCAN:
         description: "Scan apks with VirusTotal"
         required: false
         type: boolean
-        default: false
+        default: true
       CLEANUP:
         description: "Clear GitHub(Useful if Telegram upload is enabled)"
         required: false
         type: boolean
         default: false
+      COMMIT_CHANGELOG:
+        description: "Update Changelog"
+        type: boolean
+        required: false
+        default: true
+  workflow_dispatch:
+    inputs:
+      GITHUB_UPLOAD:
+        description: "Upload to GitHub"
+        required: false
+        type: boolean
+        default: true
+      TELEGRAM_NOTIFY:
+        description: "Upload to Telegram"
+        required: false
+        type: boolean
+        default: true
+      TELEGRAM_NO_ROOT_UPLOAD:
+        description: "Upload Non Rooted APKs to Telegram"
+        required: false
+        type: boolean
+        default: true
+      TELEGRAM_ROOT_UPLOAD:
+        description: "Upload Mgaisk Module from nikhilbadyal/revanced-magisk-module to Telegram"
+        required: false
+        type: boolean
+        default: true
+      VIRUSTOTAL_SCAN:
+        description: "Scan apks with VirusTotal"
+        required: false
+        type: boolean
+        default: true
       COMMIT_CHANGELOG:
         description: "Update Changelog"
         type: boolean
@@ -54,8 +118,28 @@ jobs:
     timeout-minutes: 5
     needs: build-apk
     if: inputs.GITHUB_UPLOAD
-
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: dev-drprasad/delete-older-releases@v0.2.0
+        with:
+          keep_latest: 77
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Get build log
+        id: get_output
+        run: |
+          bash ./buildlog.sh
+          echo -e "\nUse [MicroG APK](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) for YouTube and Music" >>build.log
+          echo -e "\n[ReVanced-Extended Changelog]($GITHUB_SERVER_URL/${{ github.repository }}/blob/main/changelog.md)" >>build.log
+          BUILD_LOG=$(cat build.log)
+          echo "BUILD_LOG<<EOF" >> $GITHUB_ENV
+          echo "$BUILD_LOG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
       - name: Download Already Built APKs
         uses: actions/download-artifact@v3
         with:
@@ -63,26 +147,35 @@ jobs:
       - name: Get Date
         id: get-date
         run: |
-          echo "date=$(TZ='Asia/Kolkata' date +"%Y.%m.%d-%H.%M.%S")" >> $GITHUB_OUTPUT
+          echo "date=$(TZ='Asia/Ho_Chi_Minh' date +"%Y.%m.%d-%H.%M.%S")" >> $GITHUB_OUTPUT
           curl https://github.com/nikhilbadyal/docker-py-revanced/blob/changelogs/changelog.md > changelog.md
-
-      - name: Delete Older Releases
-        uses: nikhilbadyal/ghaction-rm-releases@v0.0.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_PATTERN: "Build*"
 
       - name: Upload Build Artifact
         uses: ncipollo/release-action@v1.11.2
         with:
+          allowUpdates: true
+          bodyFile: build.log
           artifacts: "*-output.apk"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: Build-${{ steps.get-date.outputs.date }}
+          tag: ReVanced-Extended-${{ steps.get-date.outputs.date }} 
           artifactErrorsFailBuild: true
 
-      - name: Sleep for 10 seconds
+      - name: Switch to update branch
+        run: git checkout -f update || git switch --discard-changes --orphan update
+
+      - name: Update changelog
+        id: update_config
         run: |
-          sleep 10
+          cp -f build.log latest_build.md
+          CHANGELOG_URL="https://raw.githubusercontent.com/${{ github.repository }}/update/latest_build.md"
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: update
+          skip_checkout: true
+          file_pattern: latest_build.md
+          commit_message: Bump version ${{ needs.get_next_version_code.outputs.NEXT_VER }}
+          push_options: '-f -u'
 
   virustotal-scan:
     needs: [ upload-to-github ]
@@ -96,8 +189,16 @@ jobs:
       VT_API_KEY: ${{ secrets.VT_API_KEY }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  notify-to-telegram:
+    needs: [ virustotal-scan ]
+    uses: ./.github/workflows/notify.yml
+    if: inputs.TELEGRAM_NOTIFY
+    secrets:
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
   upload-to-telegram:
-    needs: [ upload-to-github ]
+    needs: [ notify-to-telegram ]
     uses: nikhilbadyal/ghactions/.github/workflows/telegram-uploader.yml@main
     if: inputs.TELEGRAM_NO_ROOT_UPLOAD
     secrets:
@@ -126,11 +227,3 @@ jobs:
       SEND_MESSAGE: ${{ secrets.SEND_MESSAGE }}
       MESSAGE: ${{ secrets.MESSAGE_ROOT }}
 
-
-  cleanup:
-    name: GitHub Cleanup
-    if: inputs.CLEANUP
-    needs: [ upload-to-telegram ]
-    uses: ./.github/workflows/github-cleanup.yml
-    secrets:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

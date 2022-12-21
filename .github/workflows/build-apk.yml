@@ -49,7 +49,7 @@ on:
         type: boolean
         default: true
       TELEGRAM_ROOT_UPLOAD:
-        description: "Upload Mgaisk Module from nikhilbadyal/revanced-magisk-module to Telegram"
+        description: "Upload Magisk Module from nikhilbadyal/revanced-magisk-module to Telegram"
         required: false
         type: boolean
         default: true
@@ -151,7 +151,7 @@ jobs:
           curl https://github.com/nikhilbadyal/docker-py-revanced/blob/changelogs/changelog.md > changelog.md
 
       - name: Upload Build Artifact
-        uses: ncipollo/release-action@v1.11.2
+        uses: ncipollo/release-action@v1.12.0
         with:
           allowUpdates: true
           bodyFile: build.log

@@ -1,4 +1,4 @@
-2022-12-20
+2022-12-21
   
 CLI: revanced-cli-2.15.2-all.jar  
 

@@ -79,7 +79,12 @@ class Downloader(object):
         apm = parser.css(".apkm-badge")
         sub_url = ""
         for is_apm in apm:
-            if "APK" in is_apm.text():
+            parent_text = is_apm.parent.parent.text()
+            if "APK" in is_apm.text() and (
+                "arm64-v8a" in parent_text
+                or "universal" in parent_text
+                or "noarch" in parent_text
+            ):
                 parser = is_apm.parent
                 sub_url = parser.css_first(".accent_color").attributes["href"]
                 break
@@ -161,9 +166,13 @@ class Downloader(object):
             logger.debug("Invalid app")
             sys.exit(1)
         parser = LexborHTMLParser(self.config.session.get(page).text)
-        main_page = parser.css_first(".appRowVariantTag>.accent_color").attributes[
-            "href"
-        ]
+        try:
+            main_page = parser.css_first(".appRowVariantTag>.accent_color").attributes[
+                "href"
+            ]
+        except AttributeError:
+            # Handles a case when variants are not available
+            main_page = parser.css_first(".downloadLink").attributes["href"]
         match = re.search(r"\d", main_page)
         if not match:
             logger.error("Cannot find app main page")
@@ -263,8 +272,12 @@ class Downloader(object):
 
         :param version: version to download
         :param app: App to download
-        :return: Version of apk
+        :return: Version of apk.
         """
+        if app in self.config.existing_downloaded_apks:
+            logger.debug("Will not download apk from the internet as it already exist.")
+            # Returning Latest as I don't know, which version user provided.
+            return "latest"
         if app in self.config.upto_down:
             return self.upto_down_downloader(app)
         elif app in self.config.apk_pure:

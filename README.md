@@ -128,17 +128,15 @@ By default, script build the version as recommended by Revanced team.
     6. [warnwetter](https://www.apkmirror.com/apk/deutscher-wetterdienst/warnwetter/)
     7. [spotify](https://spotify.en.uptodown.com/android)
     8. [nyx-music-player](https://nyx-music-player.en.uptodown.com/android)
-    9. [icon-pack-studio](https://icon-pack-studio.en.uptodown.com/android)
+    9. [icon_pack_studio](https://www.apkmirror.com/apk/smart-launcher-team/icon-pack-studio/)
     10. [ticktick](https://www.apkmirror.com/apk/appest-inc/ticktick-to-do-list-with-reminder-day-planner/)
-    11. [twitch](https://twitch.en.uptodown.com/android)
+    11. [twitch](https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/)
     12. [hex-editor](https://m.apkpure.com/hex-editor/com.myprog.hexedit)
     13. [citra](https://www.apkmirror.com/apk/citra-emulator/citra-emulator/)
-    14. [crunchyroll](https://www.apkmirror.com/apk/ellation-inc/crunchyroll/)
-    15. [windy](https://windy.en.uptodown.com/android)
-    16. [my-expenses](https://my-expenses.en.uptodown.com/android)
-    17. [backdrops](https://backdrops.en.uptodown.com/android)
-    18. [sleep-as-android](https://sleep-as-android.en.uptodown.com/android)
-    19. [expensemanager](https://apksos.com/app/com.ithebk.expensemanager)
+    14. [windy](https://www.apkmirror.com/apk/windy-weather-world-inc/windy-wind-weather-forecast/)
+    15. [my-expenses](https://my-expenses.en.uptodown.com/android)
+    16. [backdrops](https://backdrops.en.uptodown.com/android)
+    17. [expensemanager](https://apksos.com/app/com.ithebk.expensemanager)
 
     <br>Please verify the source of original APKs yourself with links provided. I'm not responsible for any damaged caused.
     If you know any better/safe source to download clean. Please raise a PR.
@@ -245,7 +243,21 @@ By default, script build the version as recommended by Revanced team.
     fact to define your normal configurations in `.env` file and sometimes if you want to build something different just
     once. Add it in `GitHub secrets`.<br>
     Or you can ignore what I said above and always use `GitHub secrets`.
-13. Sample Envs<br>
+13. If APKMirror or other apk source is blocked in your region or script somehow is unable to download from apkmirror.
+    You can download apk manually from any source. Place them in `/apks` directory and provide environment variable
+    in `.env` file or in `ENVS` in `GitHub secrets`(Recommended) in the format.
+    ```dotenv
+     EXISTING_DOWNLOADED_APKS=<Comma,Seperate,App,Name>
+    ```
+    Example:
+    ```dotenv
+     EXISTING_DOWNLOADED_APKS=youtube,youtube_music
+    ```
+    If you add above. Script will not download the `Youtube` & `youtube music`apk from internet and expects an apk in
+    `/apks` folder.
+
+    Name of the downloaded apk must match with the available app choices found [here.](#note)
+14. Sample Envs<br>
     <img src="https://i.imgur.com/ajSE5nA.png" width="600" style="left">
 
 Thanks to [@aliharslan0](https://github.com/aliharslan0/pyrevanced) for his work.

@@ -1,10 +1,13 @@
 # 🤓Docker-Py-ReVanced
 
-- A little python script that will help you in building Revanced and Revanced-Extended [apps](#note)
+A little python script that will help you in building Revanced and Revanced-Extended [apps](#note)
 
-- Note - ~~I prefer [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) more
+This is just a builder for revanced and not a revanced support. Please be understanding and refraining from asking
+about revanced features/bugs. Discuss those on proper relevant forums(on Revanced GitHub , Discord)
+
+- Note - I prefer [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) more
 (for YouTube & YouTube Music) hence the YouTube and YouTube Music builds in this repo are from
-Revanced Extended.~~
+Revanced Extended.
 
 - **Note that the [CI workflow](../../actions/workflows/ci.yml) is scheduled to build the modules and APKs every 12 hours if there is a change.**
 
@@ -257,7 +260,12 @@ By default, script build the version as recommended by Revanced team.
     `/apks` folder.
 
     Name of the downloaded apk must match with the available app choices found [here.](#note)
-14. Sample Envs<br>
+14. If you run script again & again. You might hit GitHub API limit. In that case you can provide your Personal
+    GitHub Access Token in `.env` file or in `ENVS` in `GitHub secrets` (Recommended) in the format -
+    ```dotenv
+     PERSONAL_ACCESS_TOKEN=<PAT>
+    ```
+15. Sample Envs<br>
     <img src="https://i.imgur.com/ajSE5nA.png" width="600" style="left">
 
 Thanks to [@aliharslan0](https://github.com/aliharslan0/pyrevanced) for his work.
@@ -271,10 +279,3 @@ Thanks to [@aliharslan0](https://github.com/aliharslan0/pyrevanced) for his work
 - You should support the revanced development team for making a great tool.
 
 - I'm just the author of this github automation tool.
-  > [Donate Website](https://kingsmanvn.cf)
-
-  > [Paypal](http://paypal.me/kingsmanvn)
-
-  > [Buy me a coffee ☕](https://www.buymeacoffee.com/kingsmanvn)
-
-  > **99966889999999 - MB Bank**

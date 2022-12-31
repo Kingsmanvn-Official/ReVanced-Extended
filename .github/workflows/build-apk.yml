@@ -202,11 +202,36 @@ jobs:
 
   notify-to-telegram:
     needs: [ virustotal-scan ]
-    uses: ./.github/workflows/notify.yml
     if: inputs.TELEGRAM_NOTIFY
-    secrets:
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report to Telegram
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        if: env.TG_TOKEN != null
+        run: |
+          cd build || echo "build folder not found"
+          TG_CHAT="@revanced_kingsmanvn"
+          NL=$'\n'
+          APKS=""
+          for OUTPUT in *output*; do
+            DL_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/latest/download/${OUTPUT}"
+            APKS="${NL}📦[${OUTPUT}](${DL_URL})"
+          done
+          APKS=${APKS#"$NL"}
+          BODY="$(cat ../changelog.md | sed 's/\* \*\*/↪ \*\*/g; s/\*\*/\*/g; s/###//g')"
+          MSG="*ReVanced Extended*
+
+          *New build!*
+
+          ${BODY}
+
+          *▼ Download Link:*
+          ${APKS}
+          "
+          echo "'$MSG'"
+          POST="https://api.telegram.org/bot${TG_TOKEN}/sendMessage"
+          curl -X POST --data-urlencode "parse_mode=Markdown" --data-urlencode "text=${MSG}" --data-urlencode "chat_id=${TG_CHAT}" "$POST"
 
   upload-to-telegram:
     needs: [ notify-to-telegram ]

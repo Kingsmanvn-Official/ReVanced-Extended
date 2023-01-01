@@ -1,13 +1,14 @@
-name: Notify Release on Telegram
+name: Act on release
 
-on:
+on: 
   workflow_call:
     secrets:
       TELEGRAM_CHAT_ID:
-        required: false
+        required: true
       TELEGRAM_BOT_TOKEN:
-        required: false
+        required: true
   workflow_dispatch:
+      
 
 jobs:
   Notify_Release:
@@ -18,70 +19,32 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
-      - name: Switch to release branch
-        run: git checkout -f release || git switch --discard-changes --orphan update
+          submodules: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # The python version to use.
+          cache: 'pip'
+          cache-dependency-path: 'telegram-script/requirements.txt'
         
-      - name: Update release JSON
-        run: |
-          curl https://api.github.com/repos/${{ github.repository }}/releases/latest > release.json
-          
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-          
-      - name: Push release.json
-        uses: stefanzweifel/git-auto-commit-action@v4.15.4
-        with:
-          branch: release
-          skip_checkout: true
-          file_pattern: release.json
-          commit_message: Update release.json on ${{ steps.date.outputs.date }}
-          push_options: '-f -u'
-          
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10' 
-      - uses: jannekem/run-python-script-action@v1.5
-        id: pyscript
-        with:
-          script: |
-            import json
-            import re
-            
-            # Read release.json file
-            with open('release.json', 'r') as f:
-                release = json.load(f)
+      - name: Install dependencies
+        run: pip install -r telegram-script/requirements.txt
+     
+      - name: Run telegram notification script
+        run: python3 telegram-script
 
-            print(re.findall(r"CLI:[a-zA-Z-.\s0-9:]+\n", release['body'])[0] or "")
-
-            print("*📦 Downloads*")
-            # Collect browser_download_url from assets in release
-            for asset in release['assets'][::-1]:
-                print(f"🔗 [{asset['name']}]({asset['browser_download_url']})")
-
+#     - name: Commit release description changes
+#        uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: Update telegram release message ${{ github.run_id }}
+#          branch: update
+#          file_pattern: '*.md'
+          
       - name: Telegram Channel Update
-        uses: appleboy/telegram-action@v0.1.1
+        uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           format: markdown
-          message: |
-            **ReVanced Extended**
-            
-            *NEW RELEASE*
-
-            Date: ${{ steps.date.outputs.date }}
-
-            [🛡 VirusTotal analysis](https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases)
-            
-            ${{ steps.pyscript.outputs.stdout }}
-
-            [ReVanced-Extended repo](https://github.com/Kingsmanvn-Official/ReVanced-Extended)
-            
-            [Donate Website](https://kingsmanvn.cf)
-            [Paypal](http://paypal.me/kingsmanvn)
-            [Buy me a coffee ☕](https://www.buymeacoffee.com/kingsmanvn)
-            **99966889999999 - MB Bank**
-
-            Thanks
+          message_file: release_notification.md

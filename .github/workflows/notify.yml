@@ -31,7 +31,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
           
       - name: Push release.json
-        uses: stefanzweifel/git-auto-commit-action@v4.15.4
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           branch: release
           skip_checkout: true

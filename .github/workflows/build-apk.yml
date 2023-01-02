@@ -184,7 +184,7 @@ jobs:
           push_options: '-f -u'
 
   virustotal-scan:
-    needs: [ upload-to-github ]
+    needs: [ build-apk, upload-to-github ]
     uses: nikhilbadyal/ghactions/.github/workflows/virustotal-scan.yml@main
     with:
       FILES: |
@@ -196,7 +196,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   notify-to-telegram:
-    needs: [ virustotal-scan ]
+    needs: [ build-apk, upload-to-github, virustotal-scan ]
     uses: ./.github/workflows/notify.yml
     if: inputs.TELEGRAM_NOTIFY
     secrets:
@@ -204,7 +204,7 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
   upload-to-telegram:
-    needs: [ notify-to-telegram ]
+    needs: [ build-apk, upload-to-github, virustotal-scan, notify-to-telegram ]
     uses: nikhilbadyal/ghactions/.github/workflows/telegram-uploader.yml@main
     if: inputs.TELEGRAM_NO_ROOT_UPLOAD
     secrets:
@@ -218,7 +218,7 @@ jobs:
       SEND_STICKER: ${{ secrets.SEND_STICKER }}
 
   upload-to-telegram-root:
-    needs: [ upload-to-telegram ]
+    needs: [ build-apk, upload-to-github, virustotal-scan, notify-to-telegram, upload-to-telegram ]
     uses: nikhilbadyal/ghactions/.github/workflows/telegram-uploader.yml@main
     if: inputs.TELEGRAM_ROOT_UPLOAD
     secrets:

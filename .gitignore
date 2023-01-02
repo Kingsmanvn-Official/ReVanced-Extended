@@ -7,3 +7,10 @@ venv
 /revanced-cache/
 changelog.md
 .idea
+*.keystore
+!base-v17.24.34.apk
+.v*
+
+# Telegram script ignore
+__pycache__
+

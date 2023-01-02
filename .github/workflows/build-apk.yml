@@ -196,7 +196,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   notify-to-telegram:
-    needs: [ virustotal-scan ]
+    needs: [ upload-to-github ]
     uses: ./.github/workflows/notify.yml
     if: inputs.TELEGRAM_NOTIFY
     secrets:

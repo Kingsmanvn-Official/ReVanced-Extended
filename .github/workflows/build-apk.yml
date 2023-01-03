@@ -5,33 +5,6 @@ env:
   HAVE_TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID != '' }}
 on:
   workflow_call:
-    secrets:
-      ENVS:
-        required: false
-      GH_TOKEN:
-        required: false
-      VT_API_KEY:
-        required: false
-      TELEGRAM_CHAT_ID:
-        required: false
-      TELEGRAM_BOT_TOKEN:
-        required: false
-      STICKER_ID:
-        required: false
-      CHANGELOG_GITHUB_REPOSITORY:
-        required: false
-      MESSAGE_NON_ROOT:
-        required: false
-      SEND_STICKER:
-        required: false
-      DOWNLOAD_GITHUB_REPOSITORY:
-        required: false
-      ASSETS_PATTERN:
-        required: false
-      SEND_MESSAGE:
-        required: false
-      MESSAGE_ROOT:
-        required: false
     inputs:
       GITHUB_UPLOAD:
         description: "Upload to GitHub"

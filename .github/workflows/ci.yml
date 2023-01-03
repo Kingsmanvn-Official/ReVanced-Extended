@@ -24,6 +24,8 @@ jobs:
           is_cli_latest() {
             declare -r last_cli_url=$(req https://api.github.com/repos/inotia00/revanced-cli/releases/latest - | jq -r '.assets[0].browser_download_url')
             declare -r last_cli=${last_cli_url##*/}
+            echo "LAST_CLI=$last_cli" >> $GITHUB_OUTPUT
+
             cur_cli=$(sed -n 's/.*inotia00 cli: \(.*\)/\1/p' latest_build.md | xargs)
             echo "current integrations version: $cur_cli"
             echo "latest integrations version: $last_cli"
@@ -35,6 +37,8 @@ jobs:
             last_integrations_url=$(req https://api.github.com/repos/inotia00/revanced-integrations/releases/latest - | jq -r '.assets[0].browser_download_url')
             last_integrations_apk=${last_integrations_url##*/}
             last_integrations="${last_integrations_apk%.apk}-$(cut -d/ -f8 <<<"$last_integrations_url").apk"
+            echo "LAST_INTEGRATIONS=$last_integrations" >> $GITHUB_OUTPUT
+
             cur_integrations=$(sed -n 's/.*inotia00 integrations: \(.*\)/\1/p' latest_build.md | xargs)
             echo "current integrations version: $cur_integrations"
             echo "latest integrations version: $last_integrations"
@@ -44,6 +48,8 @@ jobs:
           is_patches_latest() {
             declare -r last_patches_url=$(wget -nv -O- https://api.github.com/repos/inotia00/revanced-patches/releases/latest | tr -d ' ' | sed -n 's/.*"browser_download_url":"\(.*jar\)".*/\1/p')
             declare -r last_patches=${last_patches_url##*/}
+            echo "LAST_PATCHES=$last_patches" >> $GITHUB_OUTPUT
+
             cur_patches=$(sed -n 's/.*inotia00 patches: \(.*\)/\1/p' latest_build.md | xargs)
             echo "current patches version: $cur_patches"
             echo "latest patches version: $last_patches"
@@ -67,17 +73,5 @@ jobs:
     needs: check
     uses: ./.github/workflows/build-apk.yml
     if: ${{ needs.check.outputs.SHOULD_BUILD == 1 }}
-    secrets:
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      VT_API_KEY: ${{ secrets.VT_API_KEY }}
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      ENVS: ${{ secrets.ENVS }}
-      STICKER_ID: ${{ secrets.STICKER_ID }}
-      CHANGELOG_GITHUB_REPOSITORY: ${{ secrets.CHANGELOG_GITHUB_REPOSITORY }}
-      DOWNLOAD_GITHUB_REPOSITORY: ${{ secrets.DOWNLOAD_GITHUB_REPOSITORY }}
-      ASSETS_PATTERN: ${{ secrets.ASSETS_PATTERN }}
-      SEND_MESSAGE: ${{ secrets.SEND_MESSAGE }}
-      MESSAGE_ROOT: ${{ secrets.MESSAGE_ROOT }}
-      MESSAGE_NON_ROOT: ${{ secrets.MESSAGE_NON_ROOT }}
+    secrets: inherit
 

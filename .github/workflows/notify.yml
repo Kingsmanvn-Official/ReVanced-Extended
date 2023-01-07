@@ -1,0 +1,62 @@
+name: Notify Release on Telegram
+
+on:
+  workflow_call:
+    secrets:
+      TELEGRAM_CHAT_ID:
+        required: false
+      TELEGRAM_BOT_TOKEN:
+        required: false
+  workflow_dispatch:
+
+jobs:
+  Notify_Release:
+    name: Notify Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: check version
+        id: version
+        run: |
+          source get_buildlog.sh
+
+          last_cli_url=$(req https://api.github.com/repos/inotia00/revanced-cli/releases/latest - | jq -r '.assets[0].browser_download_url')
+          last_cli=${last_cli_url##*/}
+          echo "CLI=$last_cli" >> $GITHUB_OUTPUT
+
+          mkdir -p temp
+          last_integrations_url=$(req https://api.github.com/repos/inotia00/revanced-integrations/releases/latest - | jq -r '.assets[0].browser_download_url')
+          last_integrations_apk=${last_integrations_url##*/}
+          last_integrations="${last_integrations_apk%.apk}-$(cut -d/ -f8 <<<"$last_integrations_url").apk"
+          echo "INTEGRATIONS=$last_integrations" >> $GITHUB_OUTPUT
+
+          last_patches_url=$(wget -nv -O- https://api.github.com/repos/inotia00/revanced-patches/releases/latest | tr -d ' ' | sed -n 's/.*"browser_download_url":"\(.*jar\)".*/\1/p')
+          last_patches=${last_patches_url##*/}
+          echo "PATCHES=$last_patches" >> $GITHUB_OUTPUT
+
+      - name: Telegram Channel Update
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          format: markdown
+          message: |
+            **ReVanced Extended**
+            
+            *NEW RELEASE!*
+
+            Date: ${{ steps.date.outputs.date }}
+
+            inotia00 cli: ${{ steps.version.outputs.CLI }}
+            inotia00 integrations: ${{ steps.version.outputs.INTEGRATIONS }}
+            inotia00 patches: ${{ steps.version.outputs.PATCHES }}
+
+            [See Changelog here](https://github.com/Kingsmanvn-Official/ReVanced-Extended/blob/changelogs/changelog.md)
+            
+            [Download latest release](https://github.com/Kingsmanvn-Official/ReVanced-Extended/releases)
+            
+            [ReVanced-Extended repo](https://github.com/Kingsmanvn-Official/ReVanced-Extended)

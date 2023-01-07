@@ -1,19 +1,21 @@
 # 🤓Docker-Py-ReVanced
 
-A little python script that will help you in building Revanced and Revanced-Extended [apps](#note).
+- A little python script that will help you in building Revanced and Revanced-Extended [apps](#note).
 
-**`Note`** - If you are a root user and want magisk module (Extended). Get them [here](https://github.com/nikhilbadyal/revanced-magisk-module)
+- **`Note`** - If you are a root user and want magisk module (Extended). Get them [here](https://github.com/Kingsmanvn-Official/ReVanced-Magisk)
 
-This is just a builder for revanced and not a revanced support. Please be understanding and refraining from asking
+- This is just a builder for revanced and not a revanced support. Please be understanding and refraining from asking
 about revanced features/bugs. Discuss those on proper relevant forums(on Revanced GitHub , Discord)
 
-**`Note`** - I prefer [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) more
+- **`- Note`** - I prefer [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) more
 (for YouTube & YouTube Music) hence the YouTube and YouTube Music builds in this repo are from
 Revanced Extended.
 
+- **Note that the [CI workflow](../../actions/workflows/ci.yml) is scheduled to build the modules and APKs every 12 hours if there is a change.**
+
 ## Pre-Built APKs
 
-You can get pre-built apks [here](https://revanced_apkss.t.me/)
+You can get pre-built apks [here](https://revanced_kingsmanvn.t.me/)
 
 ## Build Yourself
 
@@ -21,35 +23,33 @@ You can use any of the following methods to build.
 
 - 🚀In GitHub (**_`Recommended`_**)
 
-     1. Clik Star to support the project.<br>
-       <img src="https://i.imgur.com/FFyXaWY.png" width="400" style="left"><br>
-     2. Fork the project.<br>
-     <img src="https://i.imgur.com/R5HdByI.png" width="400" style="left"><br>
-     3. Add `ENVS` (**optional**) secret to the repo. Required only if you want to cook specific apps/versions.
-         <details>
-           <summary>🚶Detailed step by step guide</summary>
-
-         - Go to the repo settings and then to actions->secret<br>
-           <img src="https://i.imgur.com/Inj82KK.png" width="600" style="left"><br>
-         - Add Repository secret<br>
-           <img src="https://i.imgur.com/V2Wfx3J.png" width="600" style="left">
-
-        </details>
-
-     4. Go to actions tab. Select `Build & Release`.Click on `Run Workflow`.
-
+    1. Fork the project.<br>
+       <img src="https://i.imgur.com/R5HdByI.png" width="400" style="left"><br>
+    2. Add `ENVS` (**optional**) secret to the repo. Required only if you want to cook specific apps/versions.
         <details>
           <summary>🚶Detailed step by step guide</summary>
 
-         - Go to actions tab<br>
-           <img src="https://i.imgur.com/XSCvzav.png" width="600" style="left"><br>
-         - Check the status of build, It should look green.<br>
-           <img src="https://i.imgur.com/CsJt9W1.png" width="600" style="left">
+        - Go to the repo settings and then to actions->secret<br>
+          <img src="https://i.imgur.com/Inj82KK.png" width="600" style="left"><br>
+        - Add Repository secret<br>
+          <img src="https://i.imgur.com/V2Wfx3J.png" width="600" style="left">
 
-        </details>
+       </details>
 
-     5. If the building process is successful, you’ll get your APKs in the <br>
-        <img src="https://i.imgur.com/S5d7qAO.png" width="700" style="left">
+    3. Go to actions tab. Select `Build & Release`.Click on `Run Workflow`.
+
+       <details>
+         <summary>🚶Detailed step by step guide</summary>
+
+        - Go to actions tab<br>
+          <img src="https://i.imgur.com/XSCvzav.png" width="600" style="left"><br>
+        - Check the status of build, It should look green.<br>
+          <img src="https://i.imgur.com/CsJt9W1.png" width="600" style="left">
+
+       </details>
+
+    4. If the building process is successful, you’ll get your APKs in the <br>
+       <img src="https://i.imgur.com/S5d7qAO.png" width="700" style="left">
 
 - 🐳With Docker Compose
   Windows/Mac users simply install Docker Desktop. If using Linux see below
@@ -61,7 +61,7 @@ You can use any of the following methods to build.
        ```
     2. Grant Permissions with(Skip if already there)
        ```bash
-        sudo chmod 777 /var/run/docker.sock
+       sudo chmod 777 /var/run/docker.sock
        ```
     3. Install Docker compose(Skip if already installed or using **_`Docker Desktop`_**)
        ```bash
@@ -156,7 +156,7 @@ By default, script build the version as recommended by Revanced team.
    ```
    Example:
    ```ini
-   PATCH_APPS=youtube,twitter,reddit
+   PATCH_APPS=youtube,youtube_music,tiktok,ticktick,reddit,twitter
    ```
 4. If you want to exclude any patch. Set comma separated patch in `.env` file or in `ENVS` in `GitHub secrets`
    (Recommended) in
@@ -166,14 +166,14 @@ By default, script build the version as recommended by Revanced team.
    ```
    Example:
    ```dotenv
-    EXCLUDE_PATCH_YOUTUBE=custom-branding,hide-get-premium
-    EXCLUDE_PATCH_YOUTUBE_MUSIC=yt-music-is-shit
+   EXCLUDE_PATCH_YOUTUBE=custom-branding,hide-get-premium
+   EXCLUDE_PATCH_YOUTUBE_MUSIC=yt-music-is-shit
    ```
    If you are using `Revanced Extended.` Add `_EXTENDED` in exclude options.
    Example:
    ```dotenv
-    EXCLUDE_PATCH_YOUTUBE_EXTENDED=custom-branding-red,custom-branding-blue,materialyou
-    EXCLUDE_PATCH_YOUTUBE_MUSIC_EXTENDED=custom-branding-music
+   EXCLUDE_PATCH_YOUTUBE_EXTENDED=custom-branding-red,custom-branding-blue,materialyou
+   EXCLUDE_PATCH_YOUTUBE_MUSIC_EXTENDED=custom-branding-music
    ```
 5. If you want to build a specific version . Add `version` in `.env` file or in `ENVS` in `GitHub secrets` (Recommended)
    in the format
@@ -212,16 +212,16 @@ By default, script build the version as recommended by Revanced team.
    inside `apks` folder. And adding the name of `keystore-file` in `.env` file or in `ENVS` in `GitHub secrets`
    (Recommended) in the format
    ```dotenv
-    KEYSTORE_FILE_NAME=revanced.keystore
+   KEYSTORE_FILE_NAME=revanced.keystore
    ```
 8. If you want to use Revanced-Extended for YouTube and YouTube Music. Add the following adding
    in `.env` file or in `ENVS` in `GitHub secrets` (Recommended) in the format
    ```dotenv
-    BUILD_EXTENDED=True
+   BUILD_EXTENDED=True
    ```
    or disable it with (default)
    ```dotenv
-    BUILD_EXTENDED=False
+   BUILD_EXTENDED=False
    ```
 9. For Telegram Upload.
     1. Set up a telegram channel, send a message to it and forward the message to
@@ -240,7 +240,7 @@ By default, script build the version as recommended by Revanced team.
 10. You can build only for a particular arch in order to get smaller apk files.This can be done with by adding comma
     separated `ARCHS_TO_BUILD` in `ENVS` in `GitHub secrets` (Recommended) in the format.
     ```dotenv
-     ARCHS_TO_BUILD=arm64-v8a,armeabi-v7a
+    ARCHS_TO_BUILD=arm64-v8a
     ```
     Possible values for `ARCHS_TO_BUILD` are: `armeabi-v7a`,`x86`,`x86_64`,`arm64-v8a`
     Make sure you are using `revanced-extended` as `revanced` doesn't support this.
@@ -272,3 +272,20 @@ By default, script build the version as recommended by Revanced team.
     <img src="https://i.imgur.com/ajSE5nA.png" width="600" style="left">
 
 Thanks to [@aliharslan0](https://github.com/aliharslan0/pyrevanced) for his work.
+
+
+**Support**
+---
+
+- [Channel Telegram](https://t.me/revanced_kingsmanvn)
+
+- You should support the revanced development team for making a great tool.
+
+- I'm just the author of this github automation tool.
+  > [Donate Website](https://kingsmanvn.cf)
+
+  > [Paypal](http://paypal.me/kingsmanvn)
+
+  > [Buy me a coffee ☕](https://www.buymeacoffee.com/kingsmanvn)
+
+  > **99966889999999 - MB Bank**

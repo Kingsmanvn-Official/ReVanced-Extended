@@ -1,4 +1,4 @@
-2023-01-31
+2023-02-02
   
 inotia00 cli: revanced-cli-2.20.2-all.jar  
 

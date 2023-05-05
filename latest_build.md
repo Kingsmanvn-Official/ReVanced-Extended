@@ -1,6 +1,6 @@
-2023-05-04
+2023-05-05
   
-inotia00 cli: revanced-cli-2.21.0-all.jar  
+inotia00 cli: revanced-cli-2.21.1-all.jar  
 
 inotia00 integrations: revanced-integrations-0.107.1-v0.107.1.apk  
 

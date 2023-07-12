@@ -1,11 +1,11 @@
-2023-07-09
+2023-07-12
   
-inotia00 cli: revanced-cli-2.21.6-all.jar  
+inotia00 cli: revanced-cli-2.22.1-all.jar  
 
-inotia00 integrations: revanced-integrations-0.112.1-v0.112.1.apk  
+inotia00 integrations: revanced-integrations-0.112.3-v0.112.3.apk  
 
-inotia00 patches: revanced-patches-2.182.1.jar  
-[inotia00 patches changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.182.1)  
+inotia00 patches: revanced-patches-2.184.3.jar  
+[inotia00 patches changelog](https://github.com/inotia00/revanced-patches/releases/tag/v2.184.3)  
 
 Use [MicroG APK](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) for YouTube and Music
 

@@ -1,4 +1,5 @@
 """Upto Down Downloader."""
+from typing import Any
 
 from bs4 import BeautifulSoup
 from loguru import logger
@@ -35,13 +36,12 @@ class UptoDown(Downloader):
             extracted_version = version_item.find("span", {"class": "version"}).text
             if extracted_version == version:
                 download_url = version_item["data-url"]
-                print(f"data-url for version {version}: {download_url}")
                 break
         if download_url is None:
             raise AppNotFound(f"Unable to get download url for {app}")
         self.extract_download_link(download_url, app)
         logger.debug(f"Downloaded {app} apk from upto_down_downloader in rt")
 
-    def latest_version(self, app: str) -> None:
+    def latest_version(self, app: str, **kwargs: Any) -> None:
         page = f"https://{app}.en.uptodown.com/android/download"
         self.extract_download_link(page, app)
